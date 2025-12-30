@@ -12,6 +12,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons'; 
 import Svg, { Circle, G } from 'react-native-svg';
+import StudentNavBar from '../../components/StudentNavBar';
 
 // =====================================================================
 // 1. MOCK DATABASE (THE BLUEPRINT)
@@ -251,22 +252,7 @@ export default function StudentHomeScreen({ route, navigation }: any) {
 
       </ScrollView>
 
-
-      {/* --- BOTTOM NAVIGATION BAR (Static/Visual for now) --- */}
-      <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/home1 icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/calendar icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/library icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/inbox icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-      </View>
+      <StudentNavBar />
 
     </SafeAreaView>
   );
@@ -276,7 +262,7 @@ export default function StudentHomeScreen({ route, navigation }: any) {
 // 4. STYLES
 // =====================================================================
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFFFFF' },
+  container: { flex: 1, backgroundColor: '#ffffffff' },
   scrollContent: { padding: 20 },
   
   headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
@@ -372,29 +358,5 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#333'
   },
-  // --- BOTTOM NAVIGATION STYLES ---
-  bottomNav: {
-    flexDirection: 'row',
-    justifyContent: 'space-around', 
-    alignItems: 'center',
-    backgroundColor: '#7e57c2ff',
-    paddingTop: 10,
-
-    // borderTopLeftRadius: 20,
-    // borderTopRightRadius: 20,
-    
-    shadowColor: "#000", 
-    shadowOffset: { width: 0, height: -2 }, 
   
-  },
-  navItem: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10, 
-  },
-  navIcon: {
-    width: 25,  
-    height: 20,
-    tintColor: '#ffffffff', 
-  },
 });

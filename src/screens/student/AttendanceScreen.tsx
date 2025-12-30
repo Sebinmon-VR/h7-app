@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import StudentNavBar from '../../components/StudentNavBar';
 
 // =====================================================================
 // 1. DATABASE MOCK (Minimal Info Needed)
@@ -214,22 +215,8 @@ export default function AttendanceScreen({ navigation }: any) {
         </View>
 
       </ScrollView>
-
-      {/* BOTTOM NAV */}
-      <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('StudentDashboard')}>
-           <Image source={require('../../../assets/home icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/calendar icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/library icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/inbox icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-      </View>
+        {/* BOTTOM NAVIGATION BAR */}
+        <StudentNavBar />
 
     </SafeAreaView>
   );
@@ -297,15 +284,4 @@ const styles = StyleSheet.create({
   textSunday: { color: '#CCC' }, 
   textNextMonth: { color: '#d1d1d1ff' }, 
   textWhite:  { color: '#FFF', fontWeight: 'bold' },
-
-  // BOTTOM NAV
-  bottomNav: {
-    position: 'absolute', bottom: 0, left: 0, right: 0,
-    flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center',
-    backgroundColor: '#7E57C2', padding: 10,
-    borderTopLeftRadius: 20, borderTopRightRadius: 20,
-    shadowColor: "#000", shadowOffset: { width: 0, height: -2 }, shadowOpacity: 0.1, shadowRadius: 5, elevation: 10,
-  },
-  navItem: { alignItems: 'center', padding: 10 },
-  navIcon: { width: 25, height: 20, tintColor: '#FFFFFF' },
 });

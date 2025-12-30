@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import StudentNavBar from '../../components/StudentNavBar';
 
 // =====================================================================
 // 1. MOCK DATABASE (THE BLUEPRINT)
@@ -137,24 +138,7 @@ export default function EventsScreen({ navigation }: any) {
         }
       />
 
-      {/* --- BOTTOM NAVIGATION BAR (Added manually for this screen) --- */}
-      <View style={styles.bottomNav}>
-        <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('StudentDashboard')}>
-           <Image source={require('../../../assets/home icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        
-        {/* Calendar is Active here, so we could tint it differently if we wanted */}
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/calendar icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/library icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
-           <Image source={require('../../../assets/inbox icon.png')} style={styles.navIcon} resizeMode="contain" />
-        </TouchableOpacity>
-      </View>
+      <StudentNavBar />
 
     </SafeAreaView>
   );
@@ -195,25 +179,6 @@ const styles = StyleSheet.create({
   listContent: { 
     paddingHorizontal: 20, 
     paddingBottom: 100 // <--- Increased padding so last event isn't hidden
-  },
-
-  // 2. ADD THESE NEW STYLES
-  bottomNav: {
-    position: 'absolute', bottom: 0, left: 0, right: 0,
-    flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center',
-    backgroundColor: '#7E57C2', padding: 10,
-    borderTopLeftRadius: 20, borderTopRightRadius: 20,
-    shadowColor: "#000", shadowOffset: { width: 0, height: -2 }, shadowOpacity: 0.1, shadowRadius: 5, elevation: 10,
-  },
-  navItem: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10, 
-  },
-  navIcon: {
-    width: 25,  
-    height: 20,
-    tintColor: '#ffffffff', // White icons
   },
 
   // Event Card Design (Matches Screenshot 2)

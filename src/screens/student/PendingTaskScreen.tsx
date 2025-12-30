@@ -10,6 +10,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
+
 // =====================================================================
 // 1. MOCK DATABASE (TEMPORARY)
 // =====================================================================
@@ -134,6 +135,7 @@ export default function PendingTaskScreen({ navigation }: any) {
           </View>
         ))}
       </ScrollView>
+      
     </SafeAreaView>
   );
 }
