@@ -126,7 +126,7 @@ export default function StudentHomeScreen({ route, navigation }: any) {
   };
 
   return (
-    <SafeAreaView style={styles.container} edges={['top','right','left']}>
+    <SafeAreaView style={styles.container} >
       <ScrollView contentContainerStyle={styles.scrollContent}>
         
         {/* HEADER */}
@@ -379,14 +379,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#7e57c2ff',
     paddingTop: 10,
-    paddingBottom: 10,
-    borderTopLeftRadius: 25, 
-    borderTopRightRadius: 25,
+
+    // borderTopLeftRadius: 20,
+    // borderTopRightRadius: 20,
+    
     shadowColor: "#000", 
     shadowOffset: { width: 0, height: -2 }, 
-    shadowOpacity: 0.1, 
-    shadowRadius: 5, 
-    elevation: 10,
+  
   },
   navItem: {
     alignItems: 'center',

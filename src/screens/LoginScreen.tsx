@@ -11,7 +11,6 @@ import {
   Image,
   ImageSourcePropType 
 } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -94,7 +93,6 @@ export default function LoginScreen({ navigation }: any) {
 
   return (
     <LinearGradient colors={['#F9F4FC', '#aedefcff', '#fcc5edff']} style={styles.background}>
-      <StatusBar style="dark" />
       <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.contentContainer}>
           
