@@ -101,7 +101,11 @@ export default function PendingTaskScreen({ navigation }: any) {
             If the state is updated by the database, this list grows automatically.
         */}
         {tasks.map((task) => (
-          <View key={task.id} style={styles.taskRow}>
+           <TouchableOpacity 
+            key={task.id} 
+            style={styles.taskRow}
+            onPress={() => navigation.navigate('TaskDetails', { task })}
+          >
             
             {/* 1. Left Color Strip (Visual Indicator for Subject) */}
             <View style={[styles.colorStrip, { backgroundColor: task.color }]} />
@@ -132,7 +136,7 @@ export default function PendingTaskScreen({ navigation }: any) {
             {/* 3. Right Arrow */}
             <Ionicons name="chevron-forward" size={20} color="#CCC" />
 
-          </View>
+          </TouchableOpacity>
         ))}
       </ScrollView>
       

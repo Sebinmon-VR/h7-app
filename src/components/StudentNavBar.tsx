@@ -5,24 +5,18 @@ import {
   Image, 
   StyleSheet 
 } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-export default function StudentNavBar() {
-  const navigation = useNavigation<any>();
+export default function StudentNavBar({ navigation }) {
   const insets = useSafeAreaInsets();
   
-  // Optional: We can use this to highlight the active icon if needed
-  // const route = useRoute(); 
-  // const activeTab = route.name; 
-
   return (
     <View style={[styles.bottomNav, { paddingBottom: 15 + insets.bottom }]}>
       
       {/* 1. HOME BUTTON */}
       <TouchableOpacity 
         style={styles.navItem} 
-        onPress={() => navigation.navigate('StudentDashboard')}
+        onPress={() => navigation.navigate('Home')}
       >
          <Image 
            source={require('../../assets/home icon.png')} 
@@ -34,7 +28,7 @@ export default function StudentNavBar() {
       {/* 2. CALENDAR / EVENTS BUTTON */}
       <TouchableOpacity 
         style={styles.navItem} 
-       // onPress={() => navigation.navigate('calendar')} // Uncomment when Calendar is ready
+        onPress={() => navigation.navigate('Calendar')}
       >
          <Image 
            source={require('../../assets/calendar icon.png')} 
@@ -46,7 +40,7 @@ export default function StudentNavBar() {
       {/* 3. LIBRARY BUTTON */}
       <TouchableOpacity 
         style={styles.navItem}
-        // onPress={() => navigation.navigate('Library')} // Uncomment when Library is ready
+        onPress={() => navigation.navigate('Library')}
       >
          <Image 
            source={require('../../assets/library icon.png')} 
@@ -58,7 +52,7 @@ export default function StudentNavBar() {
       {/* 4. INBOX BUTTON */}
       <TouchableOpacity 
         style={styles.navItem}
-        // onPress={() => navigation.navigate('Inbox')} // Uncomment when Inbox is ready
+        onPress={() => navigation.navigate('Inbox')} // Uncomment when Inbox is ready
       >
          <Image 
            source={require('../../assets/inbox icon.png')} 

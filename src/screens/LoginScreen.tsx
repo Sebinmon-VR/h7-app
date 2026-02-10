@@ -75,10 +75,13 @@ export default function LoginScreen({ navigation }: any) {
 
     // 4. Success & Navigation
     if (role === 'student') {
-      // Go to Student Dashboard
-      navigation.replace('StudentDashboard', { userId: id });
+      // Go to Student Dashboard, which is now inside the StudentApp stack
+      navigation.replace('StudentApp', { screen: 'StudentDashboard', params: { userId: id } });
+    } else if (role === 'staff') {
+      // Go to Teacher Dashboard, which is now inside the TeacherApp stack
+      navigation.replace('TeacherApp', { screen: 'TeacherDashboard', params: { userId: id } });
     } else {
-      // For Parent/Staff (We will activate these routes later)
+      // For Parent (We will activate this route later)
       Alert.alert("Success", `Logged in as ${role} (Dashboard coming soon)`);
     }
   };

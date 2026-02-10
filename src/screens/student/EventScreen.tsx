@@ -80,6 +80,7 @@ export default function EventsScreen({ navigation }: any) {
   // 5. RENDER ITEM (Design for Single Card)
   // =================================================================
   const renderEventItem = ({ item }: { item: any }) => (
+    <TouchableOpacity onPress={() => navigation.navigate('EventDetails', { event: item })}>
     <View style={styles.eventCard}>
       {/* Row 1: Date and Time */}
       <View style={styles.cardHeaderRow}>
@@ -90,6 +91,7 @@ export default function EventsScreen({ navigation }: any) {
       {/* Row 2: Title */}
       <Text style={styles.titleText}>{item.title}</Text>
     </View>
+    </TouchableOpacity>
   );
 
   return (

@@ -1,0 +1,5 @@
+It seems there might be some confusion. The file at `c:\Users\HP\h7-app\src\screens\teacher\Classes.tsx` contains Flutter code, but it should be a React Native component (TypeScript/TSX). Also, I've been making changes to the React Native part of your application, specifically in `.tsx` files. However, the code you're showing me is for Flutter (`.dart` files).
+
+Could you please confirm which application you are running? Is it the React Native app (started with `npx expo start` or similar) or a Flutter app (started with `flutter run`)? This will help me understand why the changes are not appearing for you.
+
+To avoid further confusion, I can also remove the Flutter-related files and folders. Let me know if you'd like me to do that.
